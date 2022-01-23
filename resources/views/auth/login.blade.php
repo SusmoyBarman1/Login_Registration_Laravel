@@ -16,17 +16,31 @@
 					<h3>Log in</h3>
 					<hr>
 
-					<form>
+					<form action="{{route('login-user')}}" method="post">
+
+						@if(Session::has('success'))
+							<div class="alert alert-success">{{Session::get('success')}}</div>
+						@endif
+
+						@if(Session::has('fail'))
+							<div class="alert alert-danger">{{Session::get('fail')}}</div>
+						@endif
+
+						@csrf
 
 						<div class="form-group">
 							<label for="email">Email: </label>
-							<input type="email" class="form-group" placeholder="Enter Email ID" name="email" value="" required>
+							<input type="email" class="form-group" placeholder="Enter Email ID" name="email" value="{{old('email')}}">
+
+							<span class="text-danger">@error('email') {{$message}} @enderror</span>
 						</div>
 
 						<br>
 						<div class="form-group">
 							<label for="password">Password: </label>
-							<input type="password" class="form-group" placeholder="Enter Password" name="password" value="" required>
+							<input type="password" class="form-group" placeholder="Enter Password" name="password" value="">
+
+							<span class="text-danger">@error('password') {{$message}} @enderror</span>
 						</div>
 
 						<br>

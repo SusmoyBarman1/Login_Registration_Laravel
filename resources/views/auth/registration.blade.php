@@ -38,14 +38,14 @@
 						<div class="form-group">
 							<label for="email">Email: </label>
 							<input type="email" class="form-group" placeholder="Enter Email ID" name="email" value="{{old('email')}}">
-							<span class="text-danger">@error('email') {{$message}} @enderror
+							<span class="text-danger">@error('email') {{$message}} @enderror</span>
 						</div>
 
 						<br>
 						<div class="form-group">
 							<label for="password">Password: </label>
 							<input type="password" class="form-group" placeholder="Enter Password" name="password" value="">
-							<span class="text-danger">@error('password') {{$message}} @enderror
+							<span class="text-danger">@error('password') {{$message}} @enderror</span>
 						</div>
 
 						<br>
